@@ -1,0 +1,48 @@
+.folder-name-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+}
+
+.folder-name-input input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.folder-name-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.btn {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn.save {
+  background: #1976d2;
+  color: white;
+}
+
+.btn.cancel {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.spinner.small {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ddd;
+  border-top: 2px solid #555;
+}

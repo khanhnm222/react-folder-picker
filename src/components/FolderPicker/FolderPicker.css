@@ -1,0 +1,82 @@
+.folder-picker {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  max-height: 400px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.folder-node-wrapper {
+  width: 100%;
+}
+
+.folder-node {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.folder-node:hover {
+  background: #f7f9fc;
+}
+
+.folder-node.selected {
+  background: #e3f2fd;
+  font-weight: 500;
+}
+
+.expand-icon {
+  width: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.node-space {
+  width: 20px;
+}
+
+.folder-icon {
+  font-size: 14px;
+}
+
+.folder-name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.folder-children {
+  margin-left: 16px;
+  border-left: 1px dashed #ccc;
+}
+
+.folder-loading {
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.spinner {
+  border: 3px solid #ddd;
+  border-top: 3px solid #555;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+}
+
+.spinner.small {
+  width: 14px;
+  height: 14px;
+  border-width: 2px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

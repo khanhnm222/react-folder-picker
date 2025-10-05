@@ -1,0 +1,36 @@
+.folder-actions-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.folder-actions-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 150px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  padding: 6px 0;
+  z-index: 10;
+}
+
+.folder-action-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.folder-action-item:hover {
+  background: #f5f5f5;
+}
