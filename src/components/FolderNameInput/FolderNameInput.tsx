@@ -9,7 +9,7 @@ interface FolderNameInputProps {
   onCancel: () => void;
 }
 
-const FolderNameInput = ({
+export const FolderNameInput = ({
   initialName = "",
   autoFocus = true,
   placeholder = "Enter folder name",
@@ -67,5 +67,3 @@ const FolderNameInput = ({
     </div>
   );
 };
-
-export default FolderNameInput;

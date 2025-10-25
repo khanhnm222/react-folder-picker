@@ -1,7 +1,7 @@
 import React from "react";
 import "./FolderPicker.css";
-import FolderActions from "../FolderActions/FolderActions";
-import FolderNameInput from "../FolderNameInput/FolderNameInput";
+import { FolderNameInput } from "../FolderNameInput/FolderNameInput";
+import { FolderActions } from "../FolderActions/FolderActions";
 
 export interface FolderNode {
   id: string;
@@ -107,5 +107,3 @@ const FolderPicker: React.FC<FolderPickerProps> = ({
     </div>
   );
 };
-
-export default FolderPicker;
