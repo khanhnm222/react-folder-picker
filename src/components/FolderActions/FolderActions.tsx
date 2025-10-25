@@ -9,7 +9,7 @@ interface FolderActionsProps {
   onRenameFolder?: (folderId: string) => void;
 }
 
-const FolderActions = ({
+export const FolderActions = ({
   folderId,
   isDisabled = false,
   onAddNewFolder,
@@ -68,5 +68,3 @@ const FolderActions = ({
     </div>
   );
 };
-
-export default FolderActions;
