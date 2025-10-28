@@ -63,7 +63,7 @@ export const useFolderPicker = ({
     Set<string>
   >(new Set());
 
-  /** chọn folder */
+  /** slect folder */
   const handleSelect = useCallback(
     (id: string) => {
       setSelectedId(id);
@@ -72,7 +72,7 @@ export const useFolderPicker = ({
     [onChange]
   );
 
-  /** mở rộng folder */
+  /** expand folder */
   const handleExpand = useCallback(
     async (id: string) => {
       if (expandedIds.includes(id)) {
@@ -100,13 +100,13 @@ export const useFolderPicker = ({
     [expandedIds, getSubFolders]
   );
 
-  /** thêm folder mới */
+  /** add new folder */
   const handleAddFolder = useCallback((parentId?: string) => {
     if (!parentId) return;
     setAddingNewChildFolders((prev) => new Set(prev).add(parentId));
   }, []);
 
-  /** hủy thêm folder */
+  /** cancel adding new folder */
   const handleDiscardInput = useCallback((parentId: string) => {
     setAddingNewChildFolders((prev) => {
       const next = new Set(prev);
@@ -120,7 +120,7 @@ export const useFolderPicker = ({
     setEditingId(id);
   }, []);
 
-  /** save input (add hoặc rename) */
+  /** save input (add or rename) */
   const handleSaveInput = useCallback(
     (
       folderId: string | null,

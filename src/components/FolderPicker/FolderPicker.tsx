@@ -2,6 +2,9 @@ import React from "react";
 import "./FolderPicker.css";
 import { FolderNameInput } from "../FolderNameInput/FolderNameInput";
 import { FolderActions } from "../FolderActions/FolderActions";
+import IconFolder from "../../icons/IconFolder";
+import IconArrowDown from "../../icons/IconArrowDown";
+import IconArrowRight from "../../icons/IconArrowRight";
 
 export interface FolderNode {
   id: string;
@@ -11,20 +14,55 @@ export interface FolderNode {
 }
 
 interface FolderPickerProps {
+  /**
+   * List of folder nodes to display
+   */
   folders: FolderNode[];
+  /**
+   * Currently selected folder ID
+  */
   selectedId?: string;
+  /**
+   * Loading state indicator
+   * @default false
+   */
   loading?: boolean;
+  /**
+   * Currently editing folder ID
+   */
   editingId?: string;
+  /**
+   * List of expanded folder IDs
+   * @default []
+   */
   expandedIds?: string[];
+  /**
+   * Callback when a folder is selected
+   */
   onSelect?: (id: string) => void;
+  /**
+   * Callback when a folder is expanded/collapsed
+   */
   onExpand?: (id: string) => void;
+  /**
+   * Callback to add a new folder
+   */
   onAddFolder?: (parentId?: string) => void;
+  /**
+   * Callback to rename a folder
+   */
   onRenameFolder?: (id: string) => void;
+  /**
+   * Callback to save the new folder name
+   */
   onSaveFolderName?: (id: string, name: string) => void;
+  /**
+   * Callback to cancel editing
+   */
   onCancelEdit?: () => void;
 }
 
-const FolderPicker: React.FC<FolderPickerProps> = ({
+export const FolderPicker: React.FC<FolderPickerProps> = ({
   folders,
   selectedId,
   loading = false,
@@ -60,14 +98,14 @@ const FolderPicker: React.FC<FolderPickerProps> = ({
               {loading && node.id === selectedId ? (
                 <div className="spinner small" />
               ) : (
-                <span className="icon">{isExpanded ? "▼" : "▶"}</span>
+                <span className="icon">{isExpanded ? <IconArrowDown /> : <IconArrowRight />}</span>
               )}
             </div>
           ) : (
             <div className="node-space" />
           )}
 
-          <span className="folder-icon">📁</span>
+          <span className="folder-icon"><IconFolder /></span>
 
           {isEditing ? (
             <FolderNameInput

@@ -3,7 +3,7 @@
   border-radius: 8px;
   background: white;
   max-height: 400px;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   font-size: 14px;
 }
 
@@ -44,6 +44,7 @@
 
 .folder-name {
   flex: 1;
+  text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
