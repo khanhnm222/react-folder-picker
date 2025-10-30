@@ -1,7 +1,7 @@
 {
   "name": "@knguyen/react-folder-picker",
   "version": "0.0.1",
-  "description": "React components and hooks for Folder Picker functionality",
+  "description": "A lightweight React component to select and preview folders",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
