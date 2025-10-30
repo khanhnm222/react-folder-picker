@@ -1,6 +1,8 @@
+import { useRef } from 'react';
+import { useClickOutside } from '../../hooks/useClickOutside';
+import { useConditionalRender } from '../../hooks/useConditionalRender';
+import { FolderActionType, type TFolderAction } from '../../types';
 import './FolderPicker.css';
-import { FolderActionType, TFolderAction } from '@root/types';
-import { useConditionalRender } from '@root/hooks/useConditionalRender';
 
 interface FolderActionsProps {
   folderId?: string;
@@ -20,6 +22,9 @@ export const FolderActions = ({
     show: showPopup,
     hide: hidePopup,
   } = useConditionalRender(false);
+
+  const componentRef = useRef<HTMLDivElement>(null);
+  useClickOutside(componentRef, () => hidePopup);
 
   const handleSelectOption = (actionType: TFolderAction) => {
     if (actionType === FolderActionType.ADD_NEW) {
@@ -48,6 +53,7 @@ export const FolderActions = ({
         <div
           className='folder-actions-menu'
           onClick={(e) => e.stopPropagation()}
+          ref={componentRef}
         >
           <div
             className='folder-action-item'
